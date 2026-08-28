@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="pt-PT" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>História de Portugal — Eventos, Mistérios e Conspirações</title>
+<style>
+  :root{
+    --bg:#f7f5f1;
+    --card:#fffdf8;
+    --ink:#2a241d;
+    --soft:#6b6255;
+    --line:#e4dac8;
+    --green:#046a38;
+    --green-dark:#04502b;
+    --red:#da291c;
+    --gold:#b8902a;
+    --nav-bg:rgba(247,245,241,.96);
+    --chip-bg:rgba(4,106,56,.1);
+    --note-bg:rgba(184,144,42,.1);
+    --note-border:rgba(184,144,42,.35);
+    --note-ink:#6b5a1f;
+    --note-strong:#4d4015;
+    --shadow:0 2px 8px rgba(0,0,0,.04);
+    --hero-sub:#f2efe7;
+  }
+  [data-theme="dark"]{
+    --bg:#141210;
+    --card:#1e1b17;
+    --ink:#ece5d6;
+    --soft:#a89b86;
+    --line:#342d24;
+    --green:#3fae6f;
+    --green-dark:#1c6a40;
+    --red:#e8564a;
+    --gold:#d3a63c;
+    --nav-bg:rgba(20,18,16,.96);
+    --chip-bg:rgba(63,174,111,.16);
+    --note-bg:rgba(211,166,60,.12);
+    --note-border:rgba(211,166,60,.3);
+    --note-ink:#d8c27e;
+    --note-strong:#f0e0a8;
+    --shadow:0 2px 8px rgba(0,0,0,.35);
+    --hero-sub:#f2efe7;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background-color:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+    transition:background-color .25s,color .25s;
+  }
+  h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif}
+
+  .flagbar{
+    height:6px;width:100%;
+    background:linear-gradient(90deg,var(--green) 0 40%,var(--red) 40% 100%);
+  }
+
+  /* ---------- Nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:var(--nav-bg);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .inner{
+    max-width:1120px;margin:0 auto;padding:0 20px;
+    display:flex;align-items:center;justify-content:space-between;
+    height:64px;gap:12px;
+  }
+  nav .logo{font-family:Georgia,serif;font-weight:700;font-size:1rem;letter-spacing:.5px;white-space:nowrap}
+  nav .logo span{color:var(--green)}
+  .tabs{display:flex;gap:4px;background:rgba(128,128,128,.12);border:1px solid var(--line);border-radius:999px;padding:4px}
+  .tab-btn{
+    border:none;background:transparent;cursor:pointer;
+    font-family:inherit;font-size:.86rem;color:var(--soft);
+    padding:7px 13px;border-radius:999px;transition:.15s;white-space:nowrap;
+  }
+  .tab-btn:hover{color:var(--ink)}
+  .tab-btn.active{background:var(--green);color:#fff}
+  .controls{display:flex;align-items:center;gap:6px}
+  .icon-btn{
+    border:1px solid var(--line);background:var(--card);color:var(--ink);
+    cursor:pointer;font-family:inherit;font-size:.85rem;font-weight:600;
+    border-radius:999px;padding:7px 12px;transition:.15s;white-space:nowrap;
+  }
+  .icon-btn:hover{border-color:var(--green)}
+  .lang-switch{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+  .lang-switch button{
+    border:none;background:var(--card);color:var(--soft);cursor:pointer;
+    font-family:inherit;font-size:.82rem;font-weight:700;padding:7px 10px;
+  }
+  .lang-switch button.active{background:var(--green);color:#fff}
+  .coffee-btn{
+    display:inline-flex;align-items:center;gap:7px;
+    background:var(--red);color:#fff;border:none;cursor:pointer;
+    font-family:inherit;font-size:.86rem;font-weight:600;
+    padding:9px 15px;border-radius:999px;transition:.15s;white-space:nowrap;
+  }
+  .coffee-btn:hover{background:#b82116;transform:translateY(-1px)}
+
+  /* ---------- Hero ---------- */
+  header.hero{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(circle at 18% 25%, rgba(255,255,255,.10), transparent 45%),
+      radial-gradient(circle at 85% 80%, rgba(255,255,255,.07), transparent 45%),
+      linear-gradient(120deg,#046a38 0%,#046a38 46%,#c2251a 100%);
+    color:#fff;text-align:center;padding:72px 24px 64px;
+  }
+  header.hero::after{
+    content:"";position:absolute;inset:0;opacity:.1;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect x='4' y='4' width='192' height='192' fill='none' stroke='%23ffffff' stroke-width='2.5'/%3E%3Crect x='9' y='9' width='182' height='182' fill='none' stroke='%23ffffff' stroke-width='1'/%3E%3Cg transform='translate(100,100)'%3E%3Ccircle r='34' fill='none' stroke='%23ffffff' stroke-width='1.6'/%3E%3Ccircle r='11' fill='%23ffffff'/%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1.6'%3E%3Cellipse cx='0' cy='-22' rx='7.5' ry='13'/%3E%3Cellipse cx='0' cy='-22' rx='7.5' ry='13' transform='rotate(45)'/%3E%3Cellipse cx='0' cy='-22' rx='7.5' ry='13' transform='rotate(90)'/%3E%3Cellipse cx='0' cy='-22' rx='7.5' ry='13' transform='rotate(135)'/%3E%3Cellipse cx='0' cy='-22' rx='7.5' ry='13' transform='rotate(180)'/%3E%3Cellipse cx='0' cy='-22' rx='7.5' ry='13' transform='rotate(225)'/%3E%3Cellipse cx='0' cy='-22' rx='7.5' ry='13' transform='rotate(270)'/%3E%3Cellipse cx='0' cy='-22' rx='7.5' ry='13' transform='rotate(315)'/%3E%3C/g%3E%3C/g%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='2'%3E%3Cpath d='M4 52 A48 48 0 0 1 52 4'/%3E%3Cpath d='M196 148 A48 48 0 0 1 148 196'/%3E%3Cpath d='M148 4 A48 48 0 0 1 196 52'/%3E%3Cpath d='M4 148 A48 48 0 0 1 52 196'/%3E%3C/g%3E%3C/svg%3E");
+    background-size:200px 200px;pointer-events:none;
+  }
+  header.hero .wrap{position:relative;z-index:1;max-width:820px;margin:0 auto}
+  header.hero .kicker{
+    display:inline-block;font-size:.75rem;letter-spacing:3px;text-transform:uppercase;
+    border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:6px 16px;margin-bottom:20px;
+  }
+  header.hero h1{font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.1;margin-bottom:14px}
+  header.hero p{font-size:1.08rem;color:var(--hero-sub);max-width:640px;margin:0 auto}
+
+  /* ---------- Layout ---------- */
+  main{max-width:1120px;margin:0 auto;padding:0 20px}
+  section{padding:64px 0}
+  .section-head{margin-bottom:36px}
+  .section-head .tag{
+    display:inline-block;font-size:.7rem;letter-spacing:2px;text-transform:uppercase;
+    color:var(--green);background:var(--chip-bg);padding:4px 12px;border-radius:999px;margin-bottom:12px;
+    border-left:3px solid var(--red);
+  }
+  .section-head h2{font-size:clamp(1.6rem,3.2vw,2.3rem);line-height:1.15;margin-bottom:10px}
+  .section-head p{color:var(--soft);max-width:720px}
+  .divider{height:3px;width:64px;background:linear-gradient(90deg,var(--green),var(--red));border-radius:3px;margin-top:16px}
+
+  .tab-panel{display:none}
+  .tab-panel.active{display:block}
+
+  /* ---------- Timeline ---------- */
+  .timeline{position:relative;padding-left:34px}
+  .timeline::before{
+    content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;
+    background:linear-gradient(var(--green),var(--gold),var(--red));border-radius:2px;
+  }
+  .tl-item{position:relative;margin-bottom:26px}
+  .tl-item::before{
+    content:"";position:absolute;left:-34px;top:8px;width:20px;height:20px;border-radius:50%;
+    background:var(--bg);border:3px solid var(--green);
+  }
+  .tl-item.red::before{border-color:var(--red)}
+  .tl-item.gold::before{border-color:var(--gold)}
+  .tl-card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:18px 20px;box-shadow:var(--shadow);border-left:4px solid var(--green);
+  }
+  .tl-card.red{border-left-color:var(--red)}
+  .tl-card .year{font-family:Georgia,serif;font-size:1.2rem;font-weight:700;color:var(--green)}
+  .tl-card.red .year{color:var(--red)}
+  .tl-card h3{font-size:1.05rem;margin:2px 0 6px}
+  .tl-card p{color:var(--soft);font-size:.93rem}
+
+  /* ---------- Cards ---------- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:22px;box-shadow:var(--shadow);border-top:3px solid var(--green);
+    display:flex;flex-direction:column;gap:8px;
+    transition:transform .18s,box-shadow .18s;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,.09)}
+  .card.red{border-top-color:var(--red)}
+  .card .badges{display:flex;gap:8px;flex-wrap:wrap}
+  .badge{
+    font-size:.68rem;letter-spacing:1px;text-transform:uppercase;font-weight:600;
+    padding:3px 10px;border-radius:999px;color:#fff;
+  }
+  .badge.green{background:var(--green)}
+  .badge.red{background:var(--red)}
+  .badge.gold{background:var(--gold)}
+  .badge.dark{background:#3a332a}
+  .badge.verdict{
+    background:#0f2f23;border:1px solid var(--green);color:#cfe8d8;
+    letter-spacing:.5px;text-transform:none;font-weight:600;
+  }
+  .badge.verdict.condenado{background:#5c0f0a;border-color:var(--red);color:#ffd9d5}
+  .badge.verdict.absolvido{background:#0c3a20;border-color:var(--green);color:#d2f0de}
+  .badge.verdict.arquivado{background:#4a3d10;border-color:var(--gold);color:#f3e6bd}
+  .badge.verdict.curso{background:#12314a;border-color:#2b6f9c;color:#d6e9f5}
+  .card h3{font-size:1.1rem;line-height:1.3}
+  .card .date{font-size:.8rem;color:var(--green);font-weight:600}
+  .card.red .date{color:var(--red)}
+  .card p{color:var(--soft);font-size:.92rem;flex:1}
+  .card .outcome{font-size:.79rem;font-weight:700;color:var(--ink)}
+  .card .outcome span{color:var(--soft);font-weight:400}
+
+  /* ---------- Povo: barras percentuais ---------- */
+  .bar-row{margin-bottom:14px}
+  .bar-row .lbl{display:flex;justify-content:space-between;font-size:.9rem;margin-bottom:5px}
+  .bar-row .lbl b{font-weight:700}
+  .bar-row .lbl span{color:var(--soft);font-weight:600;font-size:.85rem}
+  .bar-track{background:rgba(128,128,128,.16);border-radius:99px;height:14px;overflow:hidden}
+  .bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--green),var(--gold));transition:width .6s}
+
+  .pop-table{width:100%;border-collapse:collapse;font-size:.92rem}
+  .pop-table th,.pop-table td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line)}
+  .pop-table th{color:var(--soft);font-size:.78rem;text-transform:uppercase;letter-spacing:1px}
+  .pop-table tr:hover td{background:rgba(128,128,128,.06)}
+  .pop-table td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+  .pop-table .est{color:var(--soft);font-size:.72rem}
+
+  /* ---------- Note ---------- */
+  .note{
+    background:var(--note-bg);border:1px solid var(--note-border);
+    border-left:4px solid var(--gold);border-radius:10px;padding:16px 18px;
+    font-size:.88rem;color:var(--note-ink);margin-top:30px;
+  }
+  .note strong{color:var(--note-strong)}
+
+  /* ---------- Modal ---------- */
+  .modal-overlay{
+    position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;
+    display:none;align-items:center;justify-content:center;padding:20px;
+  }
+  .modal-overlay.open{display:flex}
+  .modal{
+    background:var(--card);border-radius:18px;max-width:520px;width:100%;
+    padding:28px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.35);
+    max-height:90vh;overflow:auto;
+  }
+  .modal .close{
+    position:absolute;top:14px;right:16px;background:none;border:none;
+    font-size:1.4rem;cursor:pointer;color:var(--soft);line-height:1;
+  }
+  .modal .close:hover{color:var(--ink)}
+  .modal h3{font-size:1.4rem;margin-bottom:4px}
+  .modal .sub{color:var(--soft);font-size:.9rem;margin-bottom:20px}
+  .pay-option{
+    display:flex;align-items:center;gap:14px;border:1px solid var(--line);
+    border-radius:12px;padding:14px 16px;margin-bottom:12px;background:var(--bg);
+  }
+  .pay-option .ic{
+    width:44px;height:44px;border-radius:10px;flex:0 0 auto;
+    display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#fff;
+  }
+  .pay-option .ic.mbway{background:#e31e24}
+  .pay-option .ic.revolut{background:#0b0b0b}
+  .pay-option .ic.eth{background:#3c3c9a}
+  .pay-option .meta{flex:1;min-width:0}
+  .pay-option .meta .name{font-weight:700;font-size:.95rem}
+  .pay-option .meta .val{font-size:.88rem;color:var(--soft);word-break:break-all;font-family:ui-monospace,Menlo,Consolas,monospace}
+  .pay-option .meta .hint{font-size:.75rem;color:var(--soft);opacity:.8}
+  .copy-btn{
+    flex:0 0 auto;border:1px solid var(--line);background:var(--card);border-radius:8px;
+    cursor:pointer;font-family:inherit;font-size:.78rem;color:var(--soft);padding:7px 12px;transition:.15s;
+  }
+  .copy-btn:hover{border-color:var(--green);color:var(--green)}
+
+  /* ---------- Arena ---------- */
+  .arena{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:32px 28px;box-shadow:var(--shadow)}
+  .arena form{display:flex;flex-direction:column;gap:16px}
+  .f-row{display:flex;gap:16px;flex-wrap:wrap}
+  .f-row .f-field{flex:1;min-width:220px}
+  .f-field label{display:block;font-size:.82rem;font-weight:700;margin-bottom:6px;color:var(--ink)}
+  .f-field label .opt{color:var(--soft);font-weight:400}
+  .f-field input,.f-field select,.f-field textarea{
+    width:100%;background:var(--bg);border:1px solid var(--line);border-radius:10px;
+    padding:11px 13px;font-family:inherit;font-size:.93rem;color:var(--ink);
+    transition:border-color .15s;
+  }
+  .f-field textarea{min-height:100px;resize:vertical}
+  .f-field input:focus,.f-field select:focus,.f-field textarea:focus{
+    outline:none;border-color:var(--green);
+  }
+  .f-error{color:var(--red);font-size:.78rem;font-weight:600;margin-top:4px;display:none}
+  .f-error.show{display:block}
+  .submit-btn{
+    align-self:flex-start;background:var(--green);color:#fff;border:none;cursor:pointer;
+    font-family:inherit;font-size:.95rem;font-weight:600;padding:12px 26px;border-radius:999px;transition:.15s;
+  }
+  .submit-btn:hover{background:var(--green-dark);transform:translateY(-1px)}
+  .arena-result{display:none;margin-top:22px;border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--bg)}
+  .arena-result.show{display:block}
+  .arena-result h3{color:var(--green);margin-bottom:6px}
+  .arena-result .msg{color:var(--soft);font-size:.9rem;margin-bottom:14px}
+  .arena-result textarea{
+    width:100%;min-height:160px;background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:12px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.82rem;color:var(--ink);
+  }
+  .arena-actions{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+  .arena-actions button{
+    border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;
+    font-family:inherit;font-size:.86rem;font-weight:600;padding:9px 16px;border-radius:999px;transition:.15s;
+  }
+  .arena-actions button:hover{border-color:var(--green)}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:#26201a;color:#c9bfae;padding:48px 20px;margin-top:20px;
+    border-top:6px solid var(--green);
+  }
+  footer .inner{max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between}
+  footer h4{font-family:Georgia,serif;color:#f0e9da;margin-bottom:10px}
+  footer a{color:#c9bfae;text-decoration:none;display:block;font-size:.88rem;padding:3px 0;cursor:pointer}
+  footer a:hover{color:#fff}
+  footer .fine{max-width:1120px;margin:30px auto 0;font-size:.76rem;color:#8a8172;border-top:1px solid #3a332a;padding-top:18px}
+
+  #top{
+    position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:50%;
+    background:var(--green);color:#fff;border:none;font-size:1.2rem;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:.2s;
+  }
+  #top.show{opacity:1;pointer-events:auto}
+
+  @media(max-width:820px){
+    nav .inner{flex-wrap:wrap;height:auto;padding:10px 14px;gap:10px}
+    nav .logo{order:1}
+    .controls{order:3}
+    .coffee-btn{order:2;margin-left:auto}
+    .tabs{order:4;width:100%;justify-content:center}
+    .tab-btn{flex:1}
+    section{padding:50px 0}
+  }
+</style>
+</head>
+<body>
+
+<div class="flagbar" aria-hidden="true"></div>
+
+<nav>
+  <div class="inner">
+    <div class="logo" data-i18n="logo">História de <span>Portugal</span></div>
+    <div class="tabs" role="tablist">
+      <button class="tab-btn active" data-tab="historia" role="tab" data-i18n="nav1">História de Portugal</button>
+      <button class="tab-btn" data-tab="conspiracoes" role="tab" data-i18n="nav2">Conspirações</button>
+      <button class="tab-btn" data-tab="justica" role="tab" data-i18n="nav3">Justiça</button>
+      <button class="tab-btn" data-tab="povo" role="tab" data-i18n="nav4">Povo Português</button>
+    </div>
+    <div class="controls">
+      <div class="lang-switch">
+        <button id="langPt" class="active">PT</button>
+        <button id="langEn">EN</button>
+      </div>
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Alternar tema">🌙</button>
+      <button class="coffee-btn" id="coffeeBtn" type="button" data-i18n="coffee">☕ <span data-i18n="coffeeTxt">Paga-me um café</span></button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker" data-i18n="kicker">Do Condado Portucalense aos dias de hoje</span>
+    <h1 data-i18n="h1">História de Portugal</h1>
+    <p data-i18n="heroP">Nove séculos de um dos países mais antigos do mundo: conquistas, descobrimentos, catástrofes naturais, mistérios por resolver e os momentos que mudaram o rumo da nação.</p>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== TAB HISTÓRIA ===== -->
+  <div class="tab-panel active" id="panel-historia">
+    <section>
+      <div class="section-head">
+        <span class="tag" data-i18n="histTag">Linha do tempo</span>
+        <h2 data-i18n="histTitle">História de Portugal</h2>
+        <p data-i18n="histDesc">De 1143 aos dias de hoje, os marcos que construíram a nação portuguesa.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="timeline" id="timeline"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="tag" data-i18n="natTag">Forças da natureza</span>
+        <h2 data-i18n="natTitle">Eventos Naturais</h2>
+        <p data-i18n="natDesc">Sismos, cheias, vulcões e tempestades que deixaram marca na história e na memória do país.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="grid" id="naturais"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="tag" data-i18n="evTag">Momentos marcantes</span>
+        <h2 data-i18n="evTitle">Outros Eventos Importantes</h2>
+        <p data-i18n="evDesc">Além de terramotos e revoluções, outros acontecimentos definiram Portugal na era contemporânea.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="grid" id="eventos"></div>
+    </section>
+  </div>
+
+  <!-- ===== TAB CONSPIRAÇÕES ===== -->
+  <div class="tab-panel" id="panel-conspiracoes">
+    <section>
+      <div class="section-head">
+        <span class="tag" data-i18n="conTag">Mistérios e teorias</span>
+        <h2 data-i18n="conTitle">Conspirações &amp; Mistérios</h2>
+        <p data-i18n="conDesc">Lendas, desaparecimentos e teorias que continuam a alimentar debate e imaginação. Apresentadas aqui como histórias e interpretações, não como factos comprovados.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="grid" id="conspiracoes"></div>
+
+      <section style="padding-top:24px">
+        <div class="section-head" style="margin-bottom:24px">
+          <span class="tag" data-i18n="govTag">O poder sob suspeita</span>
+          <h2 data-i18n="govTitle" style="font-size:1.6rem">Primeiros-ministros e ministros</h2>
+          <p data-i18n="govDesc">Investigação, acusações e condenações envolvendo membros de governos desde o fim do Estado Novo. São apresentados apenas factos do domínio público.</p>
+        </div>
+        <div class="grid" id="governantes"></div>
+        <div class="note" data-i18n-html="govNote"><strong>Nota:</strong> durante o Estado Novo (1933–1974) não existia justiça independente capaz de investigar os governantes, pelo que esta lista diz respeito à era democrática. Todas as pessoas são inocentes até prova em contrário; os resultados indicados refletem as decisões oficiais dos tribunais.</div>
+      </section>
+
+      <div class="note" data-i18n-html="conNote"><strong>Nota:</strong> as "conspirações" aqui listadas são apresentadas como <em>lendas, mistérios e teorias</em> com valor histórico e cultural. Nem todas têm base factual comprovada e algumas são assunto de debate académico ou jornalístico.</div>
+    </section>
+  </div>
+
+  <!-- ===== TAB JUSTIÇA ===== -->
+  <div class="tab-panel" id="panel-justica">
+    <section>
+      <div class="section-head">
+        <span class="tag" data-i18n="jusTag">Casos mediáticos</span>
+        <h2 data-i18n="jusTitle">Justiça em Portugal</h2>
+        <p data-i18n="jusDesc">Os processos que mais marcaram a opinião pública — com o resultado oficial de cada um e a controvérsia que os rodeia.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="grid" id="justica"></div>
+      <div class="note" data-i18n-html="jusNote"><strong>Nota:</strong> os resultados indicados refletem as decisões oficiais da justiça portuguesa. A secção "Controvérsia" regista o debate público, sem emitir juízos próprios sobre a culpa ou inocência de pessoas concretas — todos são inocentes até prova em contrário.</div>
+    </section>
+  </div>
+
+  <!-- ===== TAB POVO PORTUGUÊS ===== -->
+  <div class="tab-panel" id="panel-povo">
+    <section>
+      <div class="section-head">
+        <span class="tag" data-i18n="povoTag">Quem somos</span>
+        <h2 data-i18n="povoTitle">Povo Português</h2>
+        <p data-i18n="povoDesc">Das primeiras migrações pré-históricas à imigração contemporânea: a origem genética dos portugueses e a evolução da população ao longo de milénios.</p>
+        <div class="divider"></div>
+      </div>
+
+      <h3 data-i18n="origTitle" style="margin-bottom:6px">Origem genética dos portugueses</h3>
+      <p data-i18n="origSub" style="color:var(--soft);margin-bottom:22px;max-width:760px">Composição ancestral aproximada, com base em estudos de genética populacional. Os valores variam consoante o estudo e a região do país.</p>
+      <div id="originBars" style="margin-bottom:36px"></div>
+
+      <div class="grid" id="origins"></div>
+
+      <h3 data-i18n="popTitle" style="margin:40px 0 6px">A população ao longo do tempo</h3>
+      <p data-i18n="popSub" style="color:var(--soft);margin-bottom:20px;max-width:760px">Estimativas históricas e resultados dos censos. Valores anteriores a 1864 são estimativas de historiadores e demógrafos.</p>
+      <div id="popTable"></div>
+    </section>
+  </div>
+
+  <!-- ===== ARENA DE SUGESTÕES ===== -->
+  <section id="arena" style="padding-top:0">
+    <div class="section-head">
+      <span class="tag" data-i18n="arenaTag">Contribui</span>
+      <h2 data-i18n="arenaTitle">Arena de Sugestões</h2>
+      <p data-i18n="arenaDesc">Encontraste um facto, evento ou caso que falta aqui? Envia a tua sugestão com informação probatória.</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="arena">
+      <form id="suggestForm" novalidate>
+        <div class="f-row">
+          <div class="f-field">
+            <label for="sugName" data-i18n="fName">Nome (opcional)</label>
+            <input id="sugName" type="text" autocomplete="name">
+          </div>
+          <div class="f-field">
+            <label for="sugCat" data-i18n="fCat">Categoria</label>
+            <select id="sugCat">
+              <option value="hist" data-i18n="catHist">História</option>
+              <option value="nat" data-i18n="catNat">Eventos Naturais</option>
+              <option value="con" data-i18n="catCon">Conspirações</option>
+              <option value="jus" data-i18n="catJus">Justiça</option>
+              <option value="povo" data-i18n="catPovo">Povo Português</option>
+              <option value="outro" data-i18n="catOutro">Outro</option>
+            </select>
+          </div>
+        </div>
+        <div class="f-field">
+          <label for="sugTitle" data-i18n="fTitle">Título da sugestão</label>
+          <input id="sugTitle" type="text" data-i18n-ph="phTitle" placeholder="Ex.: O mistério da Lagoa Azul em 1932">
+          <div class="f-error" id="errTitle" data-i18n="reqTitle">Indica um título.</div>
+        </div>
+        <div class="f-field">
+          <label for="sugDesc" data-i18n="fDesc">Descrição</label>
+          <textarea id="sugDesc" data-i18n-ph="phDesc" placeholder="Descreve o facto, evento ou caso e porque deve fazer parte do site."></textarea>
+          <div class="f-error" id="errDesc" data-i18n="reqDesc">Descreve a sugestão.</div>
+        </div>
+        <div class="f-field">
+          <label for="sugProof" data-i18n="fProof">Fontes / informação probatória (links, documentos, imagens)</label>
+          <textarea id="sugProof" data-i18n-ph="phProof" placeholder="Cola aqui links para notícias, documentos oficiais, estudos ou outras provas."></textarea>
+          <div class="f-error" id="errProof" data-i18n="reqProof">Indica fontes ou informação probatória.</div>
+        </div>
+        <div class="f-field">
+          <label for="sugContact" data-i18n="fContact">Contacto (opcional)</label>
+          <input id="sugContact" type="text" data-i18n-ph="phContact" placeholder="Email, Telegram, X/Twitter…">
+        </div>
+        <button class="submit-btn" type="submit" data-i18n="fSubmit">Enviar sugestão</button>
+      </form>
+
+      <div class="arena-result" id="arenaResult">
+        <h3 data-i18n="thanksTitle">Obrigado pela tua contribuição! 🙏</h3>
+        <p class="msg" data-i18n="thanksMsg">A tua sugestão foi preparada. Copia o texto abaixo e envia-o pelo teu canal preferido.</p>
+        <textarea id="arenaSummary" readonly></textarea>
+        <div class="arena-actions">
+          <button id="arenaCopy" type="button" data-i18n="copyAgain">Copiar sugestão</button>
+          <button id="arenaEmail" type="button" data-i18n="sendEmail">Enviar por email</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="note" data-i18n-html="arenaNote"><strong>Como funciona:</strong> este site é estático, pelo que as sugestões não são guardadas automaticamente. Ao submeter, é gerado um resumo formatado que podes copiar e enviar para o responsável do site (email, redes sociais, etc.). As sugestões com informação probatória credível têm prioridade.</div>
+  </section>
+
+</main>
+
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="close" id="modalClose" type="button" aria-label="Fechar">×</button>
+    <h3 data-i18n="modalTitle">☕ Paga-me um café</h3>
+    <p class="sub" data-i18n="modalSub">Se gostas do conteúdo, apoia o projeto com um café. Obrigado! 🙏</p>
+
+    <div class="pay-option">
+      <div class="ic mbway">MB</div>
+      <div class="meta">
+        <div class="name">MB Way</div>
+        <div class="val">+351 916 757 743</div>
+        <div class="hint" data-i18n="mbHint">Envia o valor para este número na app MB Way.</div>
+      </div>
+      <button class="copy-btn" data-copy="+351 916 757 743" type="button" data-i18n="copy">Copiar</button>
+    </div>
+
+    <div class="pay-option">
+      <div class="ic revolut">R</div>
+      <div class="meta">
+        <div class="name">Revolut</div>
+        <div class="val">@infowithgoal</div>
+        <div class="hint" data-i18n="revHint">Envia pelo Revolut usando este @handle.</div>
+      </div>
+      <button class="copy-btn" data-copy="@infowithgoal" type="button" data-i18n="copy">Copiar</button>
+    </div>
+
+    <div class="pay-option">
+      <div class="ic eth">Ξ</div>
+      <div class="meta">
+        <div class="name">Ethereum (ETH)</div>
+        <div class="val">0x6c1255ce6c6aB90b042682B9a08E6E58a0DdfDd1</div>
+        <div class="hint" data-i18n="ethHint">Rede Ethereum (mainnet). Envia ETH ou tokens ERC-20.</div>
+      </div>
+      <button class="copy-btn" data-copy="0x6c1255ce6c6aB90b042682B9a08E6E58a0DdfDd1" type="button" data-i18n="copy">Copiar</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="inner">
+    <div>
+      <h4 data-i18n="logo">História de Portugal</h4>
+      <p style="font-size:.9rem;max-width:340px" data-i18n="footerAbout">Um panorama sobre a história, os eventos naturais, os mistérios e os momentos marcantes de um dos países mais antigos do mundo.</p>
+    </div>
+    <div>
+      <h4 data-i18n="footerNav">Navegar</h4>
+      <a data-goto="historia" data-i18n="nav1">História de Portugal</a>
+      <a data-goto="conspiracoes" data-i18n="nav2">Conspirações</a>
+      <a data-goto="justica" data-i18n="nav3">Justiça</a>
+      <a data-goto="povo" data-i18n="nav4">Povo Português</a>
+      <a id="footerCoffee" data-i18n="coffee">☕ Paga-me um café</a>
+    </div>
+  </div>
+  <div class="fine" data-i18n="footerFine">Página criada para fins informativos e educativos. Datas e factos baseiam-se em conhecimento histórico geral; verifique fontes primárias para uso académico.</div>
+</footer>
+
+<button id="top" aria-label="Voltar ao topo">↑</button>
+
+<script>
+/* ============ DICIONÁRIO DE TEXTOS ESTÁTICOS ============ */
+const STR = {
+  pt: {
+    logo:'História de <span>Portugal</span>',
+    nav1:'História de Portugal', nav2:'Conspirações', nav3:'Justiça', nav4:'Povo Português',
+    coffee:'☕ <span>Paga-me um café</span>', coffeeTxt:'Paga-me um café',
+    kicker:'Do Condado Portucalense aos dias de hoje',
+    h1:'História de Portugal',
+    heroP:'Nove séculos de um dos países mais antigos do mundo: conquistas, descobrimentos, catástrofes naturais, mistérios por resolver e os momentos que mudaram o rumo da nação.',
+    histTag:'Linha do tempo', histTitle:'História de Portugal',
+    histDesc:'De 1143 aos dias de hoje, os marcos que construíram a nação portuguesa.',
+    natTag:'Forças da natureza', natTitle:'Eventos Naturais',
+    natDesc:'Sismos, cheias, vulcões e tempestades que deixaram marca na história e na memória do país.',
+    evTag:'Momentos marcantes', evTitle:'Outros Eventos Importantes',
+    evDesc:'Além de terramotos e revoluções, outros acontecimentos definiram Portugal na era contemporânea.',
+    conTag:'Mistérios e teorias', conTitle:'Conspirações & Mistérios',
+    conDesc:'Lendas, desaparecimentos e teorias que continuam a alimentar debate e imaginação. Apresentadas aqui como histórias e interpretações, não como factos comprovados.',
+    conNote:'<strong>Nota:</strong> as "conspirações" aqui listadas são apresentadas como <em>lendas, mistérios e teorias</em> com valor histórico e cultural. Nem todas têm base factual comprovada e algumas são assunto de debate académico ou jornalístico.',
+    jusTag:'Casos mediáticos', jusTitle:'Justiça em Portugal',
+    jusDesc:'Os processos que mais marcaram a opinião pública — com o resultado oficial de cada um e a controvérsia que os rodeia.',
+    jusNote:'<strong>Nota:</strong> os resultados indicados refletem as decisões oficiais da justiça portuguesa. A secção "Controvérsia" regista o debate público, sem emitir juízos próprios sobre a culpa ou inocência de pessoas concretas — todos são inocentes até prova em contrário.',
+    povoTag:'Quem somos', povoTitle:'Povo Português',
+    povoDesc:'Das primeiras migrações pré-históricas à imigração contemporânea: a origem genética dos portugueses e a evolução da população ao longo de milénios.',
+    origTitle:'Origem genética dos portugueses',
+    origSub:'Composição ancestral aproximada, com base em estudos de genética populacional. Os valores variam consoante o estudo e a região do país.',
+    popTitle:'A população ao longo do tempo',
+    popSub:'Estimativas históricas e resultados dos censos. Valores anteriores a 1864 são estimativas de historiadores e demógrafos.',
+    modalTitle:'☕ Paga-me um café',
+    modalSub:'Se gostas do conteúdo, apoia o projeto com um café. Obrigado! 🙏',
+    mbHint:'Envia o valor para este número na app MB Way.',
+    revHint:'Envia pelo Revolut usando este @handle.',
+    ethHint:'Rede Ethereum (mainnet). Envia ETH ou tokens ERC-20.',
+    copy:'Copiar', copied:'Copiado ✓',
+    footerAbout:'Um panorama sobre a história, os eventos naturais, os mistérios e os momentos marcantes de um dos países mais antigos do mundo.',
+    footerNav:'Navegar',
+    footerFine:'Página criada para fins informativos e educativos. Datas e factos baseiam-se em conhecimento histórico geral; verifique fontes primárias para uso académico.',
+    cont:'Controvérsia: ', est:'estimativa', censo:'censo',
+    govTag:'O poder sob suspeita', govTitle:'Primeiros-ministros e ministros',
+    govDesc:'Investigação, acusações e condenações envolvendo membros de governos desde o fim do Estado Novo. São apresentados apenas factos do domínio público — com o resultado oficial de cada processo.',
+    govNote:'<strong>Nota:</strong> durante o Estado Novo (1933–1974) não existia justiça independente capaz de investigar os governantes, pelo que esta lista diz respeito à era democrática. Todas as pessoas são inocentes até prova em contrário; os resultados indicados refletem as decisões oficiais dos tribunais.',
+    arenaTag:'Contribui', arenaTitle:'Arena de Sugestões',
+    arenaDesc:'Encontraste um facto, evento ou caso que falta aqui? Envia a tua sugestão com informação probatória (fontes, links, documentos). As melhores contribuições poderão ser adicionadas ao site.',
+    fName:'Nome (opcional)', fTitle:'Título da sugestão', fCat:'Categoria',
+    fDesc:'Descrição', fProof:'Fontes / informação probatória (links, documentos, imagens)',
+    fContact:'Contacto (opcional)', fSubmit:'Enviar sugestão',
+    catHist:'História', catNat:'Eventos Naturais', catCon:'Conspirações', catJus:'Justiça', catPovo:'Povo Português', catOutro:'Outro',
+    reqTitle:'Indica um título.', reqDesc:'Descreve a sugestão.', reqProof:'Indica fontes ou informação probatória.',
+    thanksTitle:'Obrigado pela tua contribuição! 🙏',
+    thanksMsg:'A tua sugestão foi preparada. Copia o texto abaixo e envia-o pelo teu canal preferido.',
+    copyAgain:'Copiar sugestão', copiedOK:'Copiado ✓', sendEmail:'Enviar por email',
+    arenaNote:'<strong>Como funciona:</strong> este site é estático, pelo que as sugestões não são guardadas automaticamente. Ao submeter, é gerado um resumo formatado que podes copiar e enviar para o responsável do site (email, redes sociais, etc.). As sugestões com informação probatória credível têm prioridade.',
+    phTitle:'Ex.: O mistério da Lagoa Azul em 1932',
+    phDesc:'Descreve o facto, evento ou caso e porque deve fazer parte do site.',
+    phProof:'Cola aqui links para notícias, documentos oficiais, estudos ou outras provas.',
+    phContact:'Email, Telegram, X/Twitter…'
+  },
+  en: {
+    logo:'History of <span>Portugal</span>',
+    nav1:'History of Portugal', nav2:'Conspiracies', nav3:'Justice', nav4:'Portuguese People',
+    coffee:'☕ <span>Buy me a coffee</span>', coffeeTxt:'Buy me a coffee',
+    kicker:'From the County of Portucale to the present day',
+    h1:'History of Portugal',
+    heroP:'Nine centuries of one of the oldest countries in the world: conquests, discoveries, natural disasters, unsolved mysteries and the moments that changed the course of the nation.',
+    histTag:'Timeline', histTitle:'History of Portugal',
+    histDesc:'From 1143 to the present day, the milestones that built the Portuguese nation.',
+    natTag:'Forces of nature', natTitle:'Natural Events',
+    natDesc:'Earthquakes, floods, volcanoes and storms that left their mark on the country\'s history and memory.',
+    evTag:'Landmark moments', evTitle:'Other Important Events',
+    evDesc:'Beyond earthquakes and revolutions, other events shaped Portugal in the contemporary era.',
+    conTag:'Mysteries and theories', conTitle:'Conspiracies & Mysteries',
+    conDesc:'Legends, disappearances and theories that continue to fuel debate and imagination. Presented here as stories and interpretations, not as proven facts.',
+    conNote:'<strong>Note:</strong> the "conspiracies" listed here are presented as <em>legends, mysteries and theories</em> with historical and cultural value. Not all have proven factual basis and some are subject to academic or journalistic debate.',
+    jusTag:'High-profile cases', jusTitle:'Justice in Portugal',
+    jusDesc:'The trials that most marked public opinion — with each one\'s official outcome and the controversy surrounding it.',
+    jusNote:'<strong>Note:</strong> the outcomes shown reflect the official decisions of the Portuguese justice system. The "Controversy" section records public debate, without passing judgment on the guilt or innocence of specific individuals — everyone is innocent until proven guilty.',
+    povoTag:'Who we are', povoTitle:'The Portuguese People',
+    povoDesc:'From the first prehistoric migrations to contemporary immigration: the genetic origin of the Portuguese and the evolution of the population over millennia.',
+    origTitle:'Genetic origin of the Portuguese',
+    origSub:'Approximate ancestral composition, based on population genetics studies. Values vary by study and region of the country.',
+    popTitle:'Population over time',
+    popSub:'Historical estimates and census results. Figures before 1864 are estimates by historians and demographers.',
+    modalTitle:'☕ Buy me a coffee',
+    modalSub:'If you enjoy the content, support the project with a coffee. Thank you! 🙏',
+    mbHint:'Send the amount to this number in the MB Way app.',
+    revHint:'Send via Revolut using this @handle.',
+    ethHint:'Ethereum network (mainnet). Send ETH or ERC-20 tokens.',
+    copy:'Copy', copied:'Copied ✓',
+    footerAbout:'An overview of the history, natural events, mysteries and landmark moments of one of the oldest countries in the world.',
+    footerNav:'Navigate',
+    footerFine:'Page created for informational and educational purposes. Dates and facts are based on general historical knowledge; verify primary sources for academic use.',
+    cont:'Controversy: ', est:'estimate', censo:'census',
+    govTag:'Power under suspicion', govTitle:'Prime ministers and ministers',
+    govDesc:'Investigations, charges and convictions involving members of governments since the end of the Estado Novo. Only public-record facts are shown — with the official outcome of each case.',
+    govNote:'<strong>Note:</strong> during the Estado Novo (1933–1974) there was no independent justice capable of investigating rulers, so this list concerns the democratic era. Everyone is innocent until proven guilty; the outcomes shown reflect the official court decisions.',
+    arenaTag:'Contribute', arenaTitle:'Suggestion Arena',
+    arenaDesc:'Found a fact, event or case missing here? Send your suggestion with supporting evidence (sources, links, documents). The best contributions may be added to the site.',
+    fName:'Name (optional)', fTitle:'Suggestion title', fCat:'Category',
+    fDesc:'Description', fProof:'Sources / supporting evidence (links, documents, images)',
+    fContact:'Contact (optional)', fSubmit:'Send suggestion',
+    catHist:'History', catNat:'Natural Events', catCon:'Conspiracies', catJus:'Justice', catPovo:'Portuguese People', catOutro:'Other',
+    reqTitle:'Please add a title.', reqDesc:'Please describe the suggestion.', reqProof:'Please add sources or supporting evidence.',
+    thanksTitle:'Thank you for your contribution! 🙏',
+    thanksMsg:'Your suggestion has been prepared. Copy the text below and send it through your preferred channel.',
+    copyAgain:'Copy suggestion', copiedOK:'Copied ✓', sendEmail:'Send by email',
+    arenaNote:'<strong>How it works:</strong> this is a static site, so suggestions are not stored automatically. On submit, a formatted summary is generated that you can copy and send to the site owner (email, social media, etc.). Suggestions with credible supporting evidence take priority.',
+    phTitle:'E.g.: The mystery of Lagoa Azul in 1932',
+    phDesc:'Describe the fact, event or case and why it belongs on the site.',
+    phProof:'Paste links to news, official documents, studies or other evidence here.',
+    phContact:'Email, Telegram, X/Twitter…'
+  }
+};
+
+/* ============ CONTEÚDO (ordenado do mais antigo para o mais recente) ============ */
+const DATA = {
+  timeline: [
+    {year:'1143', tone:'', pt:{t:'Fundação de Portugal', d:'Pelo Tratado de Zamora, D. Afonso Henriques vê reconhecida a independência do Condado Portucalense, tornando-se o primeiro rei de Portugal.'}, en:{t:'Foundation of Portugal', d:'Through the Treaty of Zamora, Afonso Henriques has the independence of the County of Portucale recognised, becoming the first king of Portugal.'}},
+    {year:'1249', tone:'', pt:{t:'Conquista do Algarve', d:'Com a tomada de Faro por D. Afonso III, termina a Reconquista em território português e definem-se as fronteiras atuais do país.'}, en:{t:'Conquest of the Algarve', d:'With the taking of Faro by Afonso III, the Reconquista ends in Portuguese territory and the country\'s current borders are largely defined.'}},
+    {year:'1385', tone:'gold', pt:{t:'Batalha de Aljubarrota', d:'A 14 de agosto, D. João I e Nuno Álvares Pereira derrotam o exército castelhano, consolidando a independência e dando início à dinastia de Avis.'}, en:{t:'Battle of Aljubarrota', d:'On 14 August, John I and Nuno Álvares Pereira defeat the Castilian army, consolidating independence and founding the Avis dynasty.'}},
+    {year:'1415', tone:'', pt:{t:'Conquista de Ceuta', d:'O início da Expansão Portuguesa e da era dos Descobrimentos, com a primeira conquista além-mar no norte de África.'}, en:{t:'Conquest of Ceuta', d:'The start of Portuguese expansion and the Age of Discovery, with the first overseas conquest in North Africa.'}},
+    {year:'1494', tone:'gold', pt:{t:'Tratado de Tordesilhas', d:'Portugal e Espanha dividem o mundo "a descobrir" por um meridiano, garantindo a Portugal o futuro território do Brasil.'}, en:{t:'Treaty of Tordesillas', d:'Portugal and Spain divide the world "to be discovered" by a meridian, guaranteeing Portugal the future territory of Brazil.'}},
+    {year:'1498', tone:'', pt:{t:'Chegada à Índia', d:'Vasco da Gama chega a Calecute, abrindo o caminho marítimo para a Índia.'}, en:{t:'Arrival in India', d:'Vasco da Gama reaches Calicut, opening the sea route to India.'}},
+    {year:'1500', tone:'', pt:{t:'Chegada ao Brasil', d:'Pedro Álvares Cabral aporta no litoral do atual Brasil, dando início a séculos de história comum.'}, en:{t:'Arrival in Brazil', d:'Pedro Álvares Cabral lands on the coast of present-day Brazil, beginning centuries of shared history.'}},
+    {year:'1580–1640', tone:'red', pt:{t:'União Ibérica', d:'Após a crise sucessória, Portugal fica sob a coroa espanhola durante sessenta anos.'}, en:{t:'Iberian Union', d:'After the succession crisis, Portugal falls under the Spanish crown for sixty years.'}},
+    {year:'1640', tone:'red', pt:{t:'Restauração da Independência', d:'A 1 de dezembro, uma revolta em Lisboa coloca D. João IV no trono e devolve a independência a Portugal.'}, en:{t:'Restoration of Independence', d:'On 1 December, a revolt in Lisbon places John IV on the throne and restores Portugal\'s independence.'}},
+    {year:'1755', tone:'red', pt:{t:'Terramoto de Lisboa', d:'O sismo de 1 de novembro, seguido de tsunami e incêndios, destrói a capital. A reconstrução é liderada pelo Marquês de Pombal.'}, en:{t:'Lisbon Earthquake', d:'The earthquake of 1 November, followed by tsunami and fires, destroys the capital. Rebuilding is led by the Marquis of Pombal.'}},
+    {year:'1807–1811', tone:'', pt:{t:'Invasões Napoleónicas', d:'Três invasões francesas assolam o país. A corte foge para o Brasil e as forças luso-britânicas expulsam os invasores.'}, en:{t:'Napoleonic Invasions', d:'Three French invasions ravage the country. The court flees to Brazil and the Anglo-Portuguese forces drive out the invaders.'}},
+    {year:'1820', tone:'', pt:{t:'Revolução Liberal', d:'A revolta do Porto abre caminho à primeira Constituição portuguesa (1822) e a décadas de luta entre liberais e absolutistas.'}, en:{t:'Liberal Revolution', d:'The Porto uprising paves the way for the first Portuguese Constitution (1822) and decades of struggle between liberals and absolutists.'}},
+    {year:'1910', tone:'red', pt:{t:'Implantação da República', d:'A 5 de outubro, a monarquia cai e é proclamada a República Portuguesa.'}, en:{t:'Establishment of the Republic', d:'On 5 October, the monarchy falls and the Portuguese Republic is proclaimed.'}},
+    {year:'1933–1974', tone:'red', pt:{t:'Estado Novo', d:'Regime autoritário liderado por António de Oliveira Salazar e depois Marcelo Caetano, marcado pela censura e pela Guerra Colonial.'}, en:{t:'Estado Novo', d:'Authoritarian regime led by António de Oliveira Salazar and later Marcelo Caetano, marked by censorship and the Colonial War.'}},
+    {year:'1974', tone:'gold', pt:{t:'Revolução dos Cravos', d:'A 25 de abril, o regime cai quase sem resistência, devolvendo a democracia a Portugal.'}, en:{t:'Carnation Revolution', d:'On 25 April, the regime falls almost without resistance, restoring democracy to Portugal.'}},
+    {year:'1986', tone:'', pt:{t:'Adesão à CEE', d:'Portugal entra na Comunidade Económica Europeia (hoje União Europeia), iniciando um período de modernização.'}, en:{t:'Accession to the EEC', d:'Portugal joins the European Economic Community (now the EU), beginning a period of modernisation.'}}
+  ],
+  naturais: [
+    {date:'1 de novembro de 1755', tone:'red', badge:{pt:'Sismo · Tsunami', en:'Earthquake · Tsunami'}, pt:{t:'Terramoto de Lisboa', d:'Um dos sismos mais violentos da história europeia (estimado em 8,5–9,0), seguido de tsunami e incêndios que devastaram a capital.'}, en:{t:'Lisbon Earthquake', d:'One of the most violent earthquakes in European history (estimated 8.5–9.0), followed by a tsunami and fires that devastated the capital.'}},
+    {date:'23 de abril de 1909', tone:'red', badge:{pt:'Sismo', en:'Earthquake'}, pt:{t:'Sismo de Benavente', d:'Abalo de magnitude ~6,0 na região do Ribatejo, causando dezenas de mortos e destruição.'}, en:{t:'Benavente Earthquake', d:'A ~6.0 magnitude quake in the Ribatejo region, causing dozens of deaths and destruction.'}},
+    {date:'1957 – 1958', tone:'', badge:{pt:'Vulcão', en:'Volcano'}, pt:{t:'Erupção dos Capelinhos', d:'Erupção vulcânica submarina ao largo do Faial, nos Açores, que criou nova terra e levou milhares de açorianos a emigrar.'}, en:{t:'Capelinhos Eruption', d:'Submarine volcanic eruption off Faial, in the Azores, which created new land and led thousands of Azoreans to emigrate.'}},
+    {date:'25–26 de novembro de 1967', tone:'red', badge:{pt:'Cheias', en:'Floods'}, pt:{t:'Cheias de Lisboa', d:'Chuvas torrenciais provocaram inundações repentinas na região de Lisboa, com centenas de mortos.'}, en:{t:'Lisbon Floods', d:'Torrential rain caused flash floods in the Lisbon region, with hundreds of deaths.'}},
+    {date:'28 de fevereiro de 1969', tone:'red', badge:{pt:'Sismo', en:'Earthquake'}, pt:{t:'Sismo de 1969', d:'Magnitude 7,8 ao largo da costa sudoeste, sentido em Lisboa e no Algarve.'}, en:{t:'1969 Earthquake', d:'Magnitude 7.8 off the southwest coast, felt in Lisbon and the Algarve.'}},
+    {date:'1 de janeiro de 1980', tone:'red', badge:{pt:'Sismo', en:'Earthquake'}, pt:{t:'Sismo dos Açores', d:'Magnitude 7,2 entre as ilhas Terceira, São Jorge e Graciosa, com dezenas de mortos.'}, en:{t:'Azores Earthquake', d:'Magnitude 7.2 between Terceira, São Jorge and Graciosa islands, with dozens of deaths.'}},
+    {date:'junho e outubro de 2017', tone:'red', badge:{pt:'Incêndios', en:'Wildfires'}, pt:{t:'Incêndios de 2017', d:'Os incêndios de Pedrógão Grande e de outubro causaram mais de cem mortos, mudando a política de proteção civil.'}, en:{t:'2017 Wildfires', d:'The Pedrógão Grande and October fires caused more than one hundred deaths, changing civil protection policy.'}},
+    {date:'13–14 de outubro de 2018', tone:'', badge:{pt:'Tempestade', en:'Storm'}, pt:{t:'Furacão Leslie', d:'O primeiro furacão a atingir Portugal continental desde 1842, com rajadas superiores a 170 km/h.'}, en:{t:'Hurricane Leslie', d:'The first hurricane to hit mainland Portugal since 1842, with gusts over 170 km/h.'}}
+  ],
+  eventos: [
+    {date:'1961 – 1974', tone:'red', badge:{pt:'Política', en:'Politics'}, pt:{t:'Guerra Colonial', d:'Treze anos de guerra em Angola, Moçambique e Guiné-Bissau contra os movimentos independentistas.'}, en:{t:'Colonial War', d:'Thirteen years of war in Angola, Mozambique and Guinea-Bissau against the independence movements.'}},
+    {date:'1974 – 1975', tone:'', badge:{pt:'Democracia', en:'Democracy'}, pt:{t:'Descolonização', d:'Após o 25 de Abril, Portugal reconheceu a independência das antigas colónias africanas.'}, en:{t:'Decolonisation', d:'After 25 April, Portugal recognised the independence of its former African colonies.'}},
+    {date:'desde 1996', tone:'', badge:{pt:'Cultura', en:'Culture'}, pt:{t:'Património Mundial da UNESCO', d:'Portugal conta com dezenas de locais classificados, dos centros históricos do Porto e de Guimarães à Torre de Belém.'}, en:{t:'UNESCO World Heritage', d:'Portugal has dozens of classified sites, from the historic centres of Porto and Guimarães to the Belém Tower.'}},
+    {date:'22 de maio – 30 de setembro de 1998', tone:'', badge:{pt:'Cultura', en:'Culture'}, pt:{t:'Expo 98', d:'A Exposição Mundial de Lisboa, dedicada aos oceanos, transformou a zona oriental da cidade.'}, en:{t:'Expo 98', d:'The Lisbon World Exposition, dedicated to the oceans, transformed the eastern part of the city.'}},
+    {date:'1 de janeiro de 2002', tone:'', badge:{pt:'Economia', en:'Economy'}, pt:{t:'Adoção do Euro', d:'Portugal adotou a moeda única europeia, substituindo o escudo.'}, en:{t:'Adoption of the Euro', d:'Portugal adopted the single European currency, replacing the escudo.'}},
+    {date:'junho – julho de 2004', tone:'', badge:{pt:'Desporto', en:'Sport'}, pt:{t:'Euro 2004', d:'Portugal organizou o Campeonato Europeu de Futebol, afirmando-se como palco de grandes eventos.'}, en:{t:'Euro 2004', d:'Portugal hosted the European Football Championship, establishing itself as a stage for major events.'}}
+  ],
+  conspiracoes: [
+    {date:'1492 – 1500', tone:'', badge:{pt:'Debate histórico', en:'Historical debate'}, pt:{t:'A descoberta "acidental" do Brasil', d:'Terá a chegada de Cabral ao Brasil sido um acaso da rota para a Índia — ou uma escala intencional e planeada?'}, en:{t:'The "accidental" discovery of Brazil', d:'Was Cabral\'s arrival in Brazil an accident of the India route — or an intentional, planned stop?'}},
+    {date:'desde 1578', tone:'', badge:{pt:'Lenda', en:'Legend'}, pt:{t:'O Sebastianismo', d:'D. Sebastião desapareceu em Alcácer-Quibir e o corpo nunca foi identificado. Nasceu a crença de que "O Desejado" regressaria para salvar Portugal.'}, en:{t:'Sebastianism', d:'King Sebastian vanished at Alcácer-Quibir and his body was never identified. The belief arose that "The Desired One" would return to save Portugal.'}},
+    {date:'1 de fevereiro de 1908', tone:'red', badge:{pt:'Regicídio', en:'Regicide'}, pt:{t:'Quem esteve por trás do Regicídio?', d:'O assassinato do rei D. Carlos e do príncipe Luís Filipe foi atribuído a republicanos ligados à Carbonária, mas a extensão da conspiração continua discutida.'}, en:{t:'Who was behind the Regicide?', d:'The murder of King Carlos and Prince Luís Filipe was attributed to republicans linked to the Carbonária, but the conspiracy\'s extent is still debated.'}},
+    {date:'desde 1917', tone:'', badge:{pt:'Mistério', en:'Mystery'}, pt:{t:'Os Segredos de Fátima', d:'As aparições teriam revelado três segredos. O "terceiro segredo", divulgado só em 2000, gerou décadas de especulação.'}, en:{t:'The Secrets of Fátima', d:'The apparitions are said to have revealed three secrets. The "third secret", released only in 2000, fuelled decades of speculation.'}},
+    {date:'1968 – 1970', tone:'red', badge:{pt:'Mistério político', en:'Political mystery'}, pt:{t:'Salazar soube que foi substituído?', d:'Após a queda de 1968, há quem sustente que Salazar terá morrido em 1970 sem nunca saber que já não governava.'}, en:{t:'Did Salazar know he was replaced?', d:'After his 1968 fall, some claim Salazar died in 1970 without ever knowing he no longer governed.'}},
+    {date:'25 de novembro de 1975', tone:'red', badge:{pt:'Política', en:'Politics'}, pt:{t:'O 25 de Novembro de 1975', d:'O golpe e contragolpe que puseram fim ao PREC foram decisivos para o rumo democrático. Quem os coordenou continua a gerar teorias.'}, en:{t:'The 25 November 1975', d:'The coup and counter-coup that ended the PREC were decisive for the democratic course. Who coordinated them still generates theories.'}},
+    {date:'4 de março de 1998', tone:'red', badge:{pt:'Caso por resolver', en:'Unsolved case'}, pt:{t:'O desaparecimento de Rui Pedro', d:'Um rapaz de 11 anos desapareceu em Lousada e nunca foi encontrado — um dos desaparecimentos mais marcantes do país.'}, en:{t:'The disappearance of Rui Pedro', d:'An 11-year-old boy vanished in Lousada and was never found — one of the country\'s most notable disappearances.'}},
+    {date:'3 de maio de 2007', tone:'', badge:{pt:'Caso mediático', en:'High-profile case'}, pt:{t:'O caso Madeleine McCann', d:'O desaparecimento de uma criança britânica de três anos na Praia da Luz tornou-se um dos casos mais mediáticos do mundo.'}, en:{t:'The Madeleine McCann case', d:'The disappearance of a three-year-old British child in Praia da Luz became one of the most publicised cases in the world.'}}
+  ],
+  justica: [
+    {date:'1772', tone:'', cat:{pt:'Caso histórico', en:'Historical case'}, verdict:{cls:'condenado', pt:'Condenada', en:'Convicted'}, pt:{t:'Luísa de Jesus', d:'Última mulher executada em Portugal, enforcada em Coimbra por infanticídio.', c:'As condições brutais da época e a dúvida sobre o número real de vítimas fazem do caso um marco sombrio da história penal portuguesa.'}, en:{t:'Luísa de Jesus', d:'Last woman executed in Portugal, hanged in Coimbra for infanticide.', c:'The brutal conditions of the era and uncertainty over the real number of victims make it a dark landmark in Portuguese penal history.'}},
+    {date:'século XIX', tone:'', cat:{pt:'Caso histórico', en:'Historical case'}, verdict:{cls:'condenado', pt:'Condenado', en:'Convicted'}, pt:{t:'Zé do Telhado', d:'O salteador mais célebre de Portugal assaltava os ricos e distribuía parte do dinheiro pelos pobres. Condenado a degredo no Brasil.', c:'A figura de "Robin Hood" português manteve-se viva no folclore, misturando crime, lenda e justiça social popular.'}, en:{t:'Zé do Telhado', d:'Portugal\'s most famous bandit robbed the rich and gave part of the money to the poor. Sentenced to exile in Brazil.', c:'The Portuguese "Robin Hood" figure remained alive in folklore, mixing crime, legend and popular social justice.'}},
+    {date:'1925', tone:'', cat:{pt:'Caso histórico', en:'Historical case'}, verdict:{cls:'condenado', pt:'Condenado', en:'Convicted'}, pt:{t:'Alves dos Reis', d:'O maior esquema de falsificação de moeda da história portuguesa, equivalente a cerca de 1% do PIB da época. Condenado a 20 anos.', c:'A audácia do golpe e a fragilidade do Banco de Portugal continuam a fascinar historiadores.'}, en:{t:'Alves dos Reis', d:'The largest currency-counterfeiting scheme in Portuguese history, worth about 1% of the GDP of the time. Sentenced to 20 years.', c:'The audacity of the scheme and the fragility of the Bank of Portugal still fascinate historians.'}},
+    {date:'década de 1960', tone:'', cat:{pt:'Caso histórico', en:'Historical case'}, verdict:{cls:'arquivado', pt:'Sem condenação', en:'No conviction'}, pt:{t:'Caso Ballet Rose', d:'Rede de prostituição de menores que alegadamente envolvia figuras da alta sociedade. Os autos desapareceram sem condenações.', c:'O desaparecimento dos processos e a suspeita de proteção a figuras influentes do Estado Novo tornam-no um dos casos mais obscuros.'}, en:{t:'Ballet Rose case', d:'A child prostitution ring allegedly involving high-society figures. The files vanished without convictions.', c:'The disappearance of the files and the suspicion of protection for influential Estado Novo figures make it one of the most obscure cases.'}},
+    {date:'1984', tone:'', cat:{pt:'Caso histórico', en:'Historical case'}, verdict:{cls:'condenado', pt:'Condenada', en:'Convicted'}, pt:{t:'Dona Branca', d:'Maria Branca dos Santos montou um esquema Ponzi que prometia juros de 10% ao mês. Condenada por burla.', c:'A dimensão da fraude e a credulidade dos lesados tornaram-na um símbolo da ganância financeira em Portugal.'}, en:{t:'Dona Branca', d:'Maria Branca dos Santos ran a Ponzi scheme promising 10% monthly interest. Convicted of fraud.', c:'The scale of the fraud and the gullibility of victims made her a symbol of financial greed in Portugal.'}},
+    {date:'1998', tone:'red', cat:{pt:'Caso histórico', en:'Historical case'}, verdict:{cls:'condenado', pt:'Condenado', en:'Convicted'}, pt:{t:'Vítor Jorge, o "Mata-Sete"', d:'Assassino em série que matou sete pessoas. Condenado à pena máxima da época (20 anos) e libertado após 14.', c:'A libertação relativamente cedo de um assassino em série levantou intenso debate sobre penas e perigosidade.'}, en:{t:'Vítor Jorge, the "Killer of Seven"', d:'A serial killer who murdered seven people. Sentenced to the maximum of the time (20 years) and released after 14.', c:'The relatively early release of a serial killer sparked intense debate about sentences and dangerousness.'}},
+    {date:'4 de março de 1998', tone:'red', cat:{pt:'Desaparecimento', en:'Disappearance'}, verdict:{cls:'curso', pt:'Por resolver', en:'Unsolved'}, pt:{t:'Caso Rui Pedro', d:'Rui Pedro, de 11 anos, desapareceu em Lousada. O principal suspeito foi julgado e absolvido por falta de provas.', c:'A absolvição do principal suspeito e as sucessivas reaberturas mantêm vivo o debate sobre o que aconteceu.'}, en:{t:'Rui Pedro case', d:'11-year-old Rui Pedro disappeared in Lousada. The main suspect was tried and acquitted for lack of evidence.', c:'The acquittal of the main suspect and successive reopenings keep the debate alive.'}},
+    {date:'2002 – 2010', tone:'red', cat:{pt:'Abuso de menores', en:'Child abuse'}, verdict:{cls:'condenado', pt:'Condenados', en:'Convicted'}, pt:{t:'Processo Casa Pia', d:'Rede de abusos sexuais de menores institucionalizados. Condenações de Carlos Silvino "Bibi" (18 anos), Carlos Cruz (7), Ferreira Diniz (7), Jorge Ritto e Manuel Abrantes.', c:'A extensão real da rede e o eventual envolvimento de outras figuras públicas continuam a dividir a opinião pública.'}, en:{t:'Casa Pia case', d:'A sexual abuse network targeting institutionalised minors. Convictions of Carlos Silvino "Bibi" (18 years), Carlos Cruz (7), Ferreira Diniz (7), Jorge Ritto and Manuel Abrantes.', c:'The real extent of the network and the possible involvement of other public figures continue to divide public opinion.'}},
+    {date:'2004 – 2006', tone:'red', cat:{pt:'Homicídio', en:'Murder'}, verdict:{cls:'condenado', pt:'Condenados', en:'Convicted'}, pt:{t:'Caso Joana Cipriano', d:'Joana, de 8 anos, desapareceu na Figueira em 2004. A mãe, Leonor, e o tio, João, foram condenados pelo homicídio. O corpo nunca foi encontrado.', c:'As alegações de tortura durante o interrogatório e a ausência do corpo mantêm o caso como um dos mais controversos.'}, en:{t:'Joana Cipriano case', d:'8-year-old Joana disappeared in Figueira in 2004. Her mother Leonor and uncle João were convicted of murder. The body was never found.', c:'Allegations of torture during interrogation and the absence of the body keep it among the most controversial cases.'}},
+    {date:'2004 – 2017', tone:'', cat:{pt:'Corrupção desportiva', en:'Sports corruption'}, verdict:{cls:'arquivado', pt:'Arquivado', en:'Archived'}, pt:{t:'Apito Dourado', d:'Investigação sobre alegada corrupção no futebol, que chegou a envolver o presidente do FC Porto, Pinto da Costa. Arquivado sem condenações relevantes.', c:'O desfecho deixou na opinião pública a sensação de que a investigação não terá chegado ao fundo da questão.'}, en:{t:'Golden Whistle', d:'Investigation into alleged football corruption that reached FC Porto president Pinto da Costa. Archived without significant convictions.', c:'The outcome left the public feeling the investigation may not have reached the bottom of the matter.'}},
+    {date:'3 de maio de 2007', tone:'red', cat:{pt:'Desaparecimento', en:'Disappearance'}, verdict:{cls:'arquivado', pt:'Arquivado', en:'Archived'}, pt:{t:'Caso Madeleine McCann', d:'Desaparecimento de uma criança britânica de três anos na Praia da Luz. Os pais foram arguidos em 2007 e o processo arquivado em 2008.', c:'As teorias sobre a responsabilidade dos pais — defendidas pelo inspetor Gonçalo Amaral, condenado por difamação — dividem a opinião pública.'}, en:{t:'Madeleine McCann case', d:'Disappearance of a three-year-old British child in Praia da Luz. The parents were named suspects in 2007 and the case archived in 2008.', c:'Theories about the parents\' responsibility — argued by inspector Gonçalo Amaral, convicted of defamation — divide public opinion.'}},
+    {date:'2009 – 2014', tone:'red', cat:{pt:'Corrupção', en:'Corruption'}, verdict:{cls:'condenado', pt:'Condenados', en:'Convicted'}, pt:{t:'Processo Face Oculta', d:'Rede de corrupção ligada ao empresário Manuel Godinho, envolvendo o ex-ministro Armando Vara. Onze condenados.', c:'O caso ficou marcado pela divulgação ilegal de escutas telefónicas e pela polémica invalidação de parte delas.'}, en:{t:'Hidden Face case', d:'A corruption network linked to businessman Manuel Godinho, involving former minister Armando Vara. Eleven convicted.', c:'The case was marked by the illegal release of wiretaps and the controversial invalidation of some of them.'}},
+    {date:'2014 – presente', tone:'red', cat:{pt:'Colapso financeiro', en:'Financial collapse'}, verdict:{cls:'condenado', pt:'Condenado', en:'Convicted'}, pt:{t:'Caso BES / Universo Espírito Santo', d:'A queda do Banco Espírito Santo (2014), um dos maiores colapsos bancários da Europa. Ricardo Salgado foi condenado em vários processos.', c:'As responsabilidades de supervisores e governos e o destino dos lesados continuam a ser debatidos.'}, en:{t:'BES / Espírito Santo case', d:'The fall of Banco Espírito Santo (2014), one of Europe\'s largest bank collapses. Ricardo Salgado was convicted in several cases.', c:'The responsibility of supervisors and governments and the fate of the victims remain under debate.'}},
+    {date:'desde 2014', tone:'red', cat:{pt:'Corrupção', en:'Corruption'}, verdict:{cls:'curso', pt:'Em curso', en:'Ongoing'}, pt:{t:'Operação Marquês', d:'Detenção do ex-primeiro-ministro José Sócrates em 2014 por suspeitas de corrupção. A pronúncia chegou em 2021; o julgamento ainda não arrancou.', c:'A duração recorde e a validade de parte da prova tornam-no um símbolo dos problemas do sistema judicial.'}, en:{t:'Operation Marquês', d:'Arrest of former prime minister José Sócrates in 2014 on suspicion of corruption. The indictment came in 2021; the trial has not yet started.', c:'Its record length and the validity of some evidence make it a symbol of the judicial system\'s problems.'}},
+    {date:'junho de 2017', tone:'red', cat:{pt:'Furto de armas', en:'Weapons theft'}, verdict:{cls:'condenado', pt:'Condenados', en:'Convicted'}, pt:{t:'Caso de Tancos', d:'Furto de armamento militar dos paióis de Tancos, com encenação da "recuperação". João Paulino, João Pais e Hugo Santos condenados; Azeredo Lopes absolvido.', c:'A alegada tentativa de encobrimento político e a absolvição do ex-ministro mantêm-se em debate.'}, en:{t:'Tancos case', d:'Theft of military weapons from the Tancos depot, with a staged "recovery". João Paulino, João Pais and Hugo Santos convicted; Azeredo Lopes acquitted.', c:'The alleged political cover-up and the former minister\'s acquittal remain under debate.'}}
+  ],
+  governantes: [
+    {date:'2008 – 2014', tone:'red', role:{pt:'Ministro (Governos de Guterres e Sócrates)', en:'Minister (Guterres and Sócrates governments)'}, verdict:{cls:'condenado', pt:'Condenado', en:'Convicted'}, pt:{t:'Armando Vara — Processo Face Oculta', d:'Condenado em setembro de 2014 a cinco anos de prisão efetiva por três crimes de tráfico de influência. O tribunal deu como provado que recebeu 25 mil euros do empresário Manuel Godinho em troca de diligências favoráveis às suas empresas.', c:'A condenação de um ex-vice-presidente do BCP e antigo ministro foi vista como inédita. Vara recorreu até à última instância.'}, en:{t:'Armando Vara — Hidden Face case', d:'Convicted in September 2014 to five years in prison for three counts of influence peddling. The court found he received 25,000 euros from businessman Manuel Godinho in exchange for favours to his companies.', c:'The conviction of a former BCP vice-president and former minister was seen as unprecedented. Vara appealed to the last instance.'}},
+    {date:'2014 – 2019', tone:'', role:{pt:'Ministro da Administração Interna (Governo de Passos Coelho)', en:'Internal Affairs Minister (Passos Coelho government)'}, verdict:{cls:'absolvido', pt:'Absolvido', en:'Acquitted'}, pt:{t:'Miguel Macedo — Vistos Gold', d:'Acusado de três crimes de prevaricação de titular de cargo político e um de tráfico de influência no processo dos Vistos Gold. Demitiu-se em 2014 na sequência do caso. Foi absolvido de todos os crimes em janeiro de 2019.', c:'O juiz presidente criticou abertamente a acusação do Ministério Público. O principal arguido, António Figueiredo, foi condenado a pena suspensa.'}, en:{t:'Miguel Macedo — Golden Visas', d:'Charged with three counts of malfeasance by a political office holder and one of influence peddling in the Golden Visas case. He resigned in 2014. Acquitted of all charges in January 2019.', c:'The presiding judge openly criticised the prosecution. The main defendant, António Figueiredo, was given a suspended sentence.'}},
+    {date:'2014 – presente', tone:'red', role:{pt:'Primeiro-ministro (2005 – 2011)', en:'Prime Minister (2005 – 2011)'}, verdict:{cls:'curso', pt:'Em julgamento', en:'On trial'}, pt:{t:'José Sócrates — Operação Marquês', d:'Detido em novembro de 2014 à chegada de Paris, acusado de 31 crimes (corrupção, branqueamento e fraude fiscal). A decisão instrutória de 2021 reduziu a acusação a seis crimes (três de branqueamento e três de falsificação). O julgamento começou em julho de 2025.', c:'É o primeiro ex-primeiro-ministro português detido. Sócrates nega as acusações e está em curso um processo recorde. Presunção de inocência até decisão final.'}, en:{t:'José Sócrates — Operation Marquês', d:'Arrested in November 2014 on arrival from Paris, charged with 31 counts (corruption, money laundering and tax fraud). The 2021 instruction decision reduced the charges to six (three of money laundering and three of forgery). The trial began in July 2025.', c:'The first Portuguese former prime minister to be arrested. Sócrates denies the charges and a record-length process is underway. Presumption of innocence until a final ruling.'}},
+    {date:'2005 – 2009 (cond. 2024)', tone:'red', role:{pt:'Ministro da Economia (Governo de Sócrates)', en:'Economy Minister (Sócrates government)'}, verdict:{cls:'condenado', pt:'Condenado', en:'Convicted'}, pt:{t:'Manuel Pinho — caso EDP/BES', d:'Condenado em junho de 2024 a dez anos de prisão por corrupção passiva, branqueamento e fraude fiscal. O tribunal deu como provado que recebeu quase 5 milhões de euros do Grupo Espírito Santo enquanto era ministro, ocultando os rendimentos numa offshore.', c:'A juíza considerou as explicações de Pinho "inverosímeis". Pinho alega inocência e recorreu para o Supremo Tribunal de Justiça.'}, en:{t:'Manuel Pinho — EDP/BES case', d:'Convicted in June 2024 to ten years in prison for passive corruption, money laundering and tax fraud. The court found he received nearly 5 million euros from the Espírito Santo Group while a minister, hiding the income in an offshore company.', c:'The judge found Pinho\'s explanations "implausible". Pinho claims innocence and appealed to the Supreme Court.'}},
+    {date:'2021 – 2022', tone:'', role:{pt:'Ministro da Administração Interna (Governo de António Costa)', en:'Internal Affairs Minister (Costa government)'}, verdict:{cls:'arquivado', pt:'Arquivado', en:'Archived'}, pt:{t:'Eduardo Cabrita — acidente na A6', d:'Investigado na sequência do atropelamento mortal de um trabalhador na A6, em junho de 2021, pela viatura oficial em que seguia. Foi constituído arguido, mas o Ministério Público arquivou o processo em 2022.', c:'O MP considerou que Cabrita, enquanto passageiro, não violou dever de cuidado. A decisão de não-pronúncia foi confirmada pela Relação de Évora em 2024, apesar da contestação da família da vítima.'}, en:{t:'Eduardo Cabrita — A6 accident', d:'Investigated over the fatal hit-and-run of a road worker on the A6 in June 2021 by the official car he was in. He was made an arguido, but the Public Prosecutor archived the case in 2022.', c:'The prosecution found that Cabrita, as a passenger, breached no duty of care. The non-indictment was confirmed by the Évora Court of Appeal in 2024, despite the victim\'s family contesting it.'}},
+    {date:'desde 2021', tone:'', role:{pt:'Ministros do Governo de Sócrates', en:'Sócrates government ministers'}, verdict:{cls:'curso', pt:'Arguidos', en:'Defendants'}, pt:{t:'Mário Lino, António Mendonça e Teixeira dos Santos — PPP rodoviárias', d:'Os antigos ministros das Obras Públicas e das Finanças foram constituídos arguidos no processo das Parcerias Público-Privadas rodoviárias, por suspeitas relacionadas com os contratos de concessão.', c:'O processo, de grande complexidade técnica, ainda decorre. Nenhum foi condenado até ao momento.'}, en:{t:'Mário Lino, António Mendonça and Teixeira dos Santos — road PPPs', d:'The former Public Works and Finance ministers were made arguidos in the road public-private partnership case, over suspicions related to concession contracts.', c:'The case, highly technical, is still underway. None has been convicted so far.'}}
+  ],
+  origins: [
+    {year:'~500.000 – 10.000 a.C.', tone:'', pt:{t:'Paleolítico — primeiros povoadores', d:'Primeiros hominídeos e caçadores-recoletores (Neandertal e Homo sapiens) na Península Ibérica.'}, en:{t:'Palaeolithic — first settlers', d:'First hominids and hunter-gatherers (Neanderthal and Homo sapiens) in the Iberian Peninsula.'}},
+    {year:'~8.000 – 5.000 a.C.', tone:'', pt:{t:'Mesolítico — caçadores-recoletores', d:'Populações atlânticas de caçadores-recoletores ao longo do litoral.'}, en:{t:'Mesolithic — hunter-gatherers', d:'Atlantic hunter-gatherer populations along the coast.'}},
+    {year:'~5.000 a.C.', tone:'', pt:{t:'Neolítico — agricultores da Anatólia', d:'A maior base genética dos portugueses: agricultores vindos da atual Turquia introduzem a agricultura (~40–55%).'}, en:{t:'Neolithic — Anatolian farmers', d:'The largest genetic base of the Portuguese: farmers from present-day Turkey introduce agriculture (~40–55%).'}},
+    {year:'~2.500 a.C.', tone:'', pt:{t:'Idade do Bronze — estepe pôntica', d:'Migrantes indo-europeus das estepes (~40% da ancestralidade) substituem quase 100% das linhagens masculinas (R1b).'}, en:{t:'Bronze Age — Pontic steppe', d:'Indo-European steppe migrants (~40% of ancestry) replace nearly 100% of male lineages (R1b).'}},
+    {year:'~1.000 a.C.', tone:'', pt:{t:'Idade do Ferro — celtas e pré-celtas', d:'Povos como os Lusitanos, Galaicos, Célticos, Cónios e Túrdulos.'}, en:{t:'Iron Age — Celts and pre-Celts', d:'Peoples such as the Lusitanians, Gallaeci, Celtici, Conii and Turduli.'}},
+    {year:'~800 a.C.', tone:'', pt:{t:'Fenícios e Gregos', d:'Feitorias e colónias costeiras dedicadas ao comércio.'}, en:{t:'Phoenicians and Greeks', d:'Coastal trading posts and colonies.'}},
+    {year:'~300 a.C.', tone:'', pt:{t:'Cartagineses', d:'Presença cartaginesa no sul da Península.'}, en:{t:'Carthaginians', d:'Carthaginian presence in the south of the peninsula.'}},
+    {year:'218 a.C. – séc. V', tone:'', pt:{t:'Romanos', d:'Romanização: latim, cidades, estradas e direito — base da língua e da cultura portuguesas.'}, en:{t:'Romans', d:'Romanisation: Latin, cities, roads and law — the basis of Portuguese language and culture.'}},
+    {year:'séc. V – VIII', tone:'', pt:{t:'Suevos e Visigodos', d:'Povos germânicos. Impacto genético de longo prazo quase nulo.'}, en:{t:'Suebi and Visigoths', d:'Germanic peoples. Long-term genetic impact almost nil.'}},
+    {year:'711 – 1249', tone:'', pt:{t:'Muçulmanos (árabes e berberes)', d:'Al-Andalus e o Gharb. Legado norte-africano de ~3–11% — o mais alto da Península Ibérica.'}, en:{t:'Muslims (Arabs and Berbers)', d:'Al-Andalus and the Gharb. North African legacy of ~3–11% — the highest in Iberia.'}},
+    {year:'Desde a época romana', tone:'', pt:{t:'Judeus sefarditas', d:'Comunidade antiga; estudos apontam até ~35% de linhagens masculinas no Sul de Portugal.'}, en:{t:'Sephardic Jews', d:'An ancient community; studies point to up to ~35% of male lineages in southern Portugal.'}},
+    {year:'séc. XV – XIX', tone:'', pt:{t:'Africanos subsarianos', d:'Via tráfico de escravos: ~3–11% de linhagens maternas; no Sul chegou a 10% da população no séc. XVI.'}, en:{t:'Sub-Saharan Africans', d:'Via the slave trade: ~3–11% of maternal lineages; in the south up to 10% of the population in the 16th century.'}},
+    {year:'séc. XV – XVIII', tone:'', pt:{t:'Era dos Descobrimentos e Império', d:'Intercâmbio global e miscigenação com África, Ásia e América.'}, en:{t:'Age of Discovery and Empire', d:'Global exchange and mixing with Africa, Asia and America.'}},
+    {year:'séc. XIX – XX', tone:'', pt:{t:'Emigração massiva', d:'Diáspora portuguesa para o Brasil, EUA, França e outros destinos.'}, en:{t:'Mass emigration', d:'Portuguese diaspora to Brazil, the USA, France and elsewhere.'}},
+    {year:'séc. XXI', tone:'', pt:{t:'Imigração contemporânea', d:'Comunidades do Brasil, dos PALOP, da Europa de Leste e da Ásia.'}, en:{t:'Contemporary immigration', d:'Communities from Brazil, the PALOP countries, Eastern Europe and Asia.'}}
+  ],
+  originPercents: [
+    {pt:'Agricultores neolíticos (Anatólia)', en:'Neolithic farmers (Anatolia)', v:48},
+    {pt:'Estepe pôntica / indo-europeus', en:'Pontic steppe / Indo-Europeans', v:38},
+    {pt:'Caçadores-recoletores (paleo/mesolítico)', en:'Hunter-gatherers (Palaeo/Mesolithic)', v:10},
+    {pt:'Norte de África (berbere/moura)', en:'North Africa (Berber/Moorish)', v:7},
+    {pt:'África subsaariana', en:'Sub-Saharan Africa', v:5},
+    {pt:'Judeu sefardita (variável)', en:'Sephardic Jewish (variable)', v:3}
+  ],
+  population: [
+    {year:'Ano 1', pop:'~413 mil', est:true},
+    {year:'600', pop:'~367 mil', est:true},
+    {year:'1100', pop:'~688 mil', est:true},
+    {year:'1400', pop:'~826 mil', est:true},
+    {year:'1500', pop:'~1,15 milhões', est:true},
+    {year:'1600', pop:'~1,84 milhões', est:true},
+    {year:'1710', pop:'~2,43 milhões', est:true},
+    {year:'1810', pop:'~3,01 milhões', est:true},
+    {year:'1864', pop:'4,19 milhões', est:false},
+    {year:'1900', pop:'5,42 milhões', est:false},
+    {year:'1930', pop:'6,83 milhões', est:false},
+    {year:'1950', pop:'8,51 milhões', est:false},
+    {year:'1960', pop:'8,85 milhões', est:false},
+    {year:'1970', pop:'8,65 milhões', est:false},
+    {year:'1981', pop:'9,83 milhões', est:false},
+    {year:'2001', pop:'10,36 milhões', est:false},
+    {year:'2011', pop:'10,56 milhões', est:false},
+    {year:'2021', pop:'10,34 milhões', est:false},
+    {year:'2023', pop:'~10,6 milhões', est:true}
+  ]
+};
+
+/* ============ ESTADO ============ */
+let lang = 'pt';
+const t = (k) => (STR[lang] && STR[lang][k]) || k;
+
+/* ============ RENDER ============ */
+function renderTimeline(){
+  const el = document.getElementById('timeline');
+  el.innerHTML = DATA.timeline.map(i => `
+    <div class="tl-item ${i.tone}">
+      <div class="tl-card ${i.tone}">
+        <span class="year">${i.year}</span>
+        <h3>${i[lang].t}</h3>
+        <p>${i[lang].d}</p>
+      </div>
+    </div>`).join('');
+}
+
+function renderCards(containerId, items){
+  const el = document.getElementById(containerId);
+  el.innerHTML = items.map(i => `
+    <div class="card ${i.tone || ''}">
+      <div class="badges"><span class="badge ${badgeClass(i.badge)}">${i.badge ? i.badge[lang] : ''}</span></div>
+      <div class="date">${i.date}</div>
+      <h3>${i[lang].t}</h3>
+      <p>${i[lang].d}</p>
+    </div>`).join('');
+}
+
+function badgeClass(badge){
+  const txt = badge ? badge.pt : '';
+  if(/Sismo|Tsunami|Cheias|Incêndios|Earthquake|Floods|Wildfires|Tsunami/.test(txt)) return 'red';
+  if(/Vulcão|Tempestade|Volcano|Storm/.test(txt)) return 'dark';
+  if(/Lenda|Mistério|Debate|Legend|Mystery|Debate|mediático|High-profile|Regicídio|Regicide|político|political|resolver|unsolved/.test(txt)) return 'gold';
+  return 'green';
+}
+
+function renderJustica(){
+  const el = document.getElementById('justica');
+  el.innerHTML = DATA.justica.map(i => `
+    <div class="card ${i.tone || ''}">
+      <div class="badges">
+        <span class="badge ${i.cat.pt.startsWith('Caso histórico') ? 'gold' : 'red'}">${i.cat[lang]}</span>
+        <span class="badge verdict ${i.verdict.cls}">${i.verdict[lang]}</span>
+      </div>
+      <div class="date">${i.date}</div>
+      <h3>${i[lang].t}</h3>
+      <p>${i[lang].d}</p>
+      <div class="outcome">${t('cont')}<span>${i[lang].c}</span></div>
+    </div>`).join('');
+}
+
+function renderGovernantes(){
+  const el = document.getElementById('governantes');
+  el.innerHTML = DATA.governantes.map(i => `
+    <div class="card ${i.tone || ''}">
+      <div class="badges">
+        <span class="badge gold">${i.role[lang]}</span>
+        <span class="badge verdict ${i.verdict.cls}">${i.verdict[lang]}</span>
+      </div>
+      <div class="date">${i.date}</div>
+      <h3>${i[lang].t}</h3>
+      <p>${i[lang].d}</p>
+      <div class="outcome">${t('cont')}<span>${i[lang].c}</span></div>
+    </div>`).join('');
+}
+
+function renderOrigins(){
+  const el = document.getElementById('origins');
+  el.innerHTML = DATA.origins.map(i => `
+    <div class="card ${i.tone || ''}">
+      <div class="date">${i.year}</div>
+      <h3>${i[lang].t}</h3>
+      <p>${i[lang].d}</p>
+    </div>`).join('');
+}
+
+function renderOriginBars(){
+  const el = document.getElementById('originBars');
+  const max = Math.max(...DATA.originPercents.map(o => o.v));
+  el.innerHTML = DATA.originPercents.map(o => `
+    <div class="bar-row">
+      <div class="lbl"><b>${o[lang]}</b><span>~${o.v}%</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:${Math.round(o.v/max*100)}%"></div></div>
+    </div>`).join('');
+}
+
+function renderPopTable(){
+  const el = document.getElementById('popTable');
+  const rows = DATA.population.map(p => `
+    <tr>
+      <td>${p.year}</td>
+      <td class="num">${p.pop}</td>
+      <td class="est">${p.est ? t('est') : t('censo')}</td>
+    </tr>`).join('');
+  el.innerHTML = `
+    <table class="pop-table">
+      <thead><tr><th>${lang==='pt'?'Ano':'Year'}</th><th style="text-align:right">${lang==='pt'?'População':'Population'}</th><th></th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+}
+
+function applyStatic(){
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    el.innerHTML = t(el.dataset.i18n);
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    el.innerHTML = t(el.dataset.i18nHtml);
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    el.setAttribute('placeholder', t(el.dataset.i18nPh));
+  });
+  // oculta o botão de email se não houver email configurado
+  const emailBtn = document.getElementById('arenaEmail');
+  if(emailBtn) emailBtn.style.display = CONTACT_EMAIL ? '' : 'none';
+}
+
+function renderAll(){
+  applyStatic();
+  renderTimeline();
+  renderCards('naturais', DATA.naturais);
+  renderCards('eventos', DATA.eventos);
+  renderCards('conspiracoes', DATA.conspiracoes);
+  renderJustica();
+  renderGovernantes();
+  renderOrigins();
+  renderOriginBars();
+  renderPopTable();
+}
+
+/* ============ TABS ============ */
+const tabBtns = document.querySelectorAll('.tab-btn');
+const panels = ['historia','conspiracoes','justica','povo'];
+function activateTab(name){
+  tabBtns.forEach(b => b.classList.toggle('active', b.dataset.tab === name));
+  panels.forEach(k => document.getElementById('panel-'+k).classList.toggle('active', k === name));
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+tabBtns.forEach(b => b.addEventListener('click', () => activateTab(b.dataset.tab)));
+document.querySelectorAll('[data-goto]').forEach(a => a.addEventListener('click', () => activateTab(a.dataset.goto)));
+
+/* ============ IDIOMA ============ */
+const langPt = document.getElementById('langPt');
+const langEn = document.getElementById('langEn');
+function setLang(l){
+  lang = l;
+  langPt.classList.toggle('active', l==='pt');
+  langEn.classList.toggle('active', l==='en');
+  document.documentElement.lang = l==='pt' ? 'pt-PT' : 'en';
+  renderAll();
+}
+langPt.addEventListener('click', () => setLang('pt'));
+langEn.addEventListener('click', () => setLang('en'));
+
+/* ============ TEMA ============ */
+const themeBtn = document.getElementById('themeBtn');
+function applyTheme(theme){
+  document.documentElement.setAttribute('data-theme', theme);
+  themeBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+}
+themeBtn.addEventListener('click', () => {
+  const cur = document.documentElement.getAttribute('data-theme');
+  applyTheme(cur === 'dark' ? 'light' : 'dark');
+});
+
+/* ============ MODAL CAFÉ ============ */
+const overlay = document.getElementById('modalOverlay');
+const coffeeBtn = document.getElementById('coffeeBtn');
+const footerCoffee = document.getElementById('footerCoffee');
+const modalClose = document.getElementById('modalClose');
+function openModal(){ overlay.classList.add('open'); }
+function closeModal(){ overlay.classList.remove('open'); }
+coffeeBtn.addEventListener('click', openModal);
+footerCoffee.addEventListener('click', openModal);
+modalClose.addEventListener('click', closeModal);
+overlay.addEventListener('click', e => { if(e.target === overlay) closeModal(); });
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+
+/* ============ COPIAR ============ */
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const val = btn.dataset.copy;
+    try{ await navigator.clipboard.writeText(val); }
+    catch(e){
+      const ta = document.createElement('textarea');
+      ta.value = val; document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); document.body.removeChild(ta);
+    }
+    btn.textContent = t('copied');
+    setTimeout(() => { btn.textContent = t('copy'); }, 1800);
+  });
+});
+
+/* ============ ARENA DE SUGESTÕES ============ */
+// ⚙️ Coloca aqui o teu email para receber sugestões. Se estiver vazio, o botão "Enviar por email" fica oculto.
+const CONTACT_EMAIL = '';
+
+const catLabels = { hist:'catHist', nat:'catNat', con:'catCon', jus:'catJus', povo:'catPovo', outro:'catOutro' };
+const suggestForm = document.getElementById('suggestForm');
+const arenaResult = document.getElementById('arenaResult');
+const arenaSummary = document.getElementById('arenaSummary');
+
+function showError(id, show){
+  document.getElementById(id).classList.toggle('show', show);
+}
+
+suggestForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = document.getElementById('sugName').value.trim();
+  const cat = document.getElementById('sugCat').value;
+  const title = document.getElementById('sugTitle').value.trim();
+  const desc = document.getElementById('sugDesc').value.trim();
+  const proof = document.getElementById('sugProof').value.trim();
+  const contact = document.getElementById('sugContact').value.trim();
+
+  const titleOk = title.length > 0;
+  const descOk = desc.length > 0;
+  const proofOk = proof.length > 0;
+  showError('errTitle', !titleOk);
+  showError('errDesc', !descOk);
+  showError('errProof', !proofOk);
+  if(!titleOk || !descOk || !proofOk) return;
+
+  const catName = t(catLabels[cat] || 'catOutro');
+  const summary =
+`[NOVA SUGESTÃO — ${lang === 'pt' ? 'História de Portugal' : 'History of Portugal'}]
+${lang === 'pt' ? 'Título' : 'Title'}: ${title}
+${lang === 'pt' ? 'Categoria' : 'Category'}: ${catName}
+${lang === 'pt' ? 'Nome' : 'Name'}: ${name || '—'}
+${lang === 'pt' ? 'Contacto' : 'Contact'}: ${contact || '—'}
+
+${lang === 'pt' ? 'Descrição' : 'Description'}:
+${desc}
+
+${lang === 'pt' ? 'Fontes / Informação probatória' : 'Sources / Supporting evidence'}:
+${proof}`;
+
+  arenaSummary.value = summary;
+  arenaResult.classList.add('show');
+  arenaResult.scrollIntoView({behavior:'smooth', block:'center'});
+});
+
+document.getElementById('arenaCopy').addEventListener('click', async () => {
+  try{ await navigator.clipboard.writeText(arenaSummary.value); }
+  catch(e){
+    arenaSummary.select();
+    document.execCommand('copy');
+  }
+  const btn = document.getElementById('arenaCopy');
+  btn.textContent = t('copiedOK');
+  setTimeout(() => { btn.textContent = t('copyAgain'); }, 1800);
+});
+
+document.getElementById('arenaEmail').addEventListener('click', () => {
+  const subject = encodeURIComponent((lang === 'pt' ? 'Sugestão — História de Portugal' : 'Suggestion — History of Portugal'));
+  const body = encodeURIComponent(arenaSummary.value);
+  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+});
+
+/* ============ VOLTAR AO TOPO ============ */
+const topBtn = document.getElementById('top');
+window.addEventListener('scroll', () => topBtn.classList.toggle('show', window.scrollY > 600));
+topBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+/* ============ INIT ============ */
+renderAll();
+</script>
+</body>
+</html>
